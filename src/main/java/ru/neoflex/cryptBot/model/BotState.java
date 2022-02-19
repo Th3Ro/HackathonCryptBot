@@ -1,0 +1,14 @@
+package ru.neoflex.cryptBot.model;
+
+public enum BotState {
+    START,
+    SUBSCRIBE_FOR_3_SECONDS,
+    UNSUBSCRIBE,
+    UNSUBSCRIBE_ACCEPTED,
+    SUBSCRIBE_FOR_CHANGE,
+    SUBSCRIBE_FOR_CHANGE_ACCEPTED,
+    HELP,
+    MENU,
+    ENTER_TIME,
+    UNKNOWN_COMMAND
+}

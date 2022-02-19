@@ -1,0 +1,12 @@
+package ru.neoflex.cryptBot;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class CryptBotApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(CryptBotApplication.class, args);
+    }
+}
