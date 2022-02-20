@@ -91,7 +91,7 @@ public class MessageHandler {
                 return menuService.getMainMenuMessage(message.getChatId(),
                         "Добро пожаловать, в данном боте Вы можете получать актуальную информацию о " +
                                 "цене популярных криптовалют, для этого Вам необходимо подписаться. Чтобы это " +
-                                "сделать нажмите на cоответствующую кнопку из меню ниже и следуйте инструкции. " +
+                                "сделать, нажмите на cоответствующую кнопку из меню ниже и следуйте инструкции. " +
                                 "Да прибудет с Вами богатство.", userId);
             case ("HELP"):
                 return menuService.getMainMenuMessage(message.getChatId(),
@@ -107,8 +107,8 @@ public class MessageHandler {
                 return menuService.getSelectCryptMenuMessage(message.getChatId(), "Выберите криптовалюту, " +
                         "которую Вы хотите отслеживать.", userId);
             case ("SUBSCRIBE_FOR_CHANGE"):
-                return new SendMessage(String.valueOf(userId),"Введите количество процентов (0-100), при падении" +
-                        " на которые Вы хотите получать уведомление.");
+                return new SendMessage(String.valueOf(userId),"Введите количество процентов (0-100, число должно " +
+                        "быть целым), при падении на которые Вы хотите получать уведомление.");
             case ("UNKNOWN_COMMAND"):
                 return menuService.getMainMenuMessage(message.getChatId(),
                         "Это вне моего сознания, пожалуйста, выберите действие из меню.", userId);

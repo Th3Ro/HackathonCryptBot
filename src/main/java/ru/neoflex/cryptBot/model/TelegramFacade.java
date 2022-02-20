@@ -92,11 +92,14 @@ public class TelegramFacade {
                 if(botStateChanger.getBotStateMap().get(userId) == BotState.SUBSCRIBE_FOR_CHANGE){
                     try{
                         // TODO USE IN THE FUTURE (MAYBEEE)
-                        double percent = Double.parseDouble(message.getText());
-                        botStateChanger.saveBotState(userId, BotState.SUBSCRIBE_FOR_CHANGE_ACCEPTED);
+                        int percent = Integer.parseInt(message.getText());
+                        if (percent <= 100 && percent >= 0){
+                            botStateChanger.saveBotState(userId, BotState.SUBSCRIBE_FOR_CHANGE_ACCEPTED);
+                        } else
+                            throw new NumberFormatException();
                     } catch (NumberFormatException ex){
-                        return new SendMessage(String.valueOf(userId), "Вы ввели не число, введите, пожалуйста" +
-                                " то, что от Вас просят.");
+                        return new SendMessage(String.valueOf(userId), "Введите, пожалуйста, целое число в " +
+                                "диапазоне 0-100.");
                     }
                 } else botStateChanger.saveBotState(userId, BotState.UNKNOWN_COMMAND);
         }
